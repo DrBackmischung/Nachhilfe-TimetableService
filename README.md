@@ -1,2 +1,2 @@
 # Nachhilfe-TimetableService
-SE III: TimetableService mit Go
+SE III: TimetableService mit Ruby on Rails
