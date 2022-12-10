@@ -10,7 +10,7 @@ Timeslot.init({
 	wochentag: {
 	  type: DataTypes.STRING
 	},
-	raum: {
+	ort: {
 		type: DataTypes.STRING
 	  },
 	fach: {
@@ -26,6 +26,12 @@ Timeslot.init({
 		type: DataTypes.STRING
 	},
 	bezahlungErfolgt: {
+		type: DataTypes.STRING
+	},
+	schuelerId: {
+		type: DataTypes.STRING
+	},
+	lehrerId: {
 		type: DataTypes.STRING
 	}
 }, {

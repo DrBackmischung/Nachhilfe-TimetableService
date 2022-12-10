@@ -8,12 +8,14 @@ sequelize.sync({ force: true }).then(async () => {
     const timeslot = {
       datum: `01.01.2020`,
       wochentag: `Montag`,
-      raum: `Raum 04b`,
+      ort: `Raum 04b`,
       fach: `Mathe`,
       uhrzeit: `11:45 Uhr`,
       dauer: `45 min`,
       preis: `35€`,
       bezahlungErfolgt: `nein`,
+      schuelerId: `marokkanischer ROnaldo`,
+      lehrerId: `Messi`
     }
     await Timeslot.create(timeslot);
   }
@@ -35,6 +37,16 @@ app.get('/timeslots', async(req, res) => {
   const timeslots = await Timeslot.findAll();
   res.send(timeslots);
 })
+
+/*app.get('timeslots', (req, res) => {
+  let fach = req.query.id
+  if(timeslots [fach]){
+    res.send(timeslots)
+  }else{
+    res.send('not found')
+  }
+})
+*/
 
 app.post('/timeslots', async (req, res) => {
   await Timeslot.create(req.body);
@@ -69,13 +81,23 @@ app.get('/timeslots/:id', idNumberControl, async (req, res, next) => {
   res.send(timeslot);
 })
 
-/*app.put('/timeslots/:id', idNumberControl, async (req, res) => {
-  const id = req.params.id;
-  const timeslot = await Timeslot.findOne({where: {id: id}});
-  timeslot.id = req.body.id;
+app.put('/timeslots/:id', async (req, res) => {
+  const requestedId = req.params.id;
+  const timeslot = await Timeslot.findOne({where: {id: requestedId}});
+  timeslot.id= req.body.id;
+  timeslot.datum = req.body.datum;
+  timeslot.wochentag = req.body.wochentag;
+  timeslot.ort= req.body.ort;
+  timeslot.fach = req.body.fach;
+  timeslot.uhrzeit = req.body.uhrzeit;
+  timeslot.dauer = req.body.dauer;
+  timeslot.preis = req.body.preis;
+  timeslot.bezahlungErfolgt = req.body.bezahlungErfolgt;
+  timeslot.schuelerId= req.body.schuelerId;
+  timeslot.lehrerId = req.body.lehrerId
   await timeslot.save();
   res.send('updated');
-})*/
+})
 
 app.delete('/timeslots/:id', idNumberControl, async (req, res) => {
   const id = req.params.id;
