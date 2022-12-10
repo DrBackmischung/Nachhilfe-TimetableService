@@ -10,7 +10,10 @@ sequelize.sync({ force: true }).then(async () => {
       wochentag: `Montag`,
       raum: `Raum 04b`,
       fach: `Mathe`,
-      dauer: `45 min`
+      uhrzeit: `11:45 Uhr`,
+      dauer: `45 min`,
+      preis: `35€`,
+      bezahlungErfolgt: `nein`,
     }
     await Timeslot.create(timeslot);
   }
@@ -27,6 +30,12 @@ const thisWillRunInEveryRequest = (req, res, next) => {
 
 app.use(thisWillRunInEveryRequest);
 
+
+app.get('/timeslots', async(req, res) => {
+  const timeslots = await Timeslot.findAll();
+  res.send(timeslots);
+})
+
 app.post('/timeslots', async (req, res) => {
   await Timeslot.create(req.body);
   res.send("success");
@@ -40,7 +49,7 @@ function InvalidIdException(){
 
 function TimeslotNotFoundException(){
   this.status = 404;
-  this.message = 'User not found';
+  this.message = 'Timeslot not found';
 }
 
 const idNumberControl = (req, res, next) => {
@@ -60,13 +69,13 @@ app.get('/timeslots/:id', idNumberControl, async (req, res, next) => {
   res.send(timeslot);
 })
 
-app.put('/timeslots/:id', idNumberControl, async (req, res) => {
+/*app.put('/timeslots/:id', idNumberControl, async (req, res) => {
   const id = req.params.id;
   const timeslot = await Timeslot.findOne({where: {id: id}});
-  timeslot.datum = req.body.datum;
+  timeslot.id = req.body.id;
   await timeslot.save();
   res.send('updated');
-})
+})*/
 
 app.delete('/timeslots/:id', idNumberControl, async (req, res) => {
   const id = req.params.id;

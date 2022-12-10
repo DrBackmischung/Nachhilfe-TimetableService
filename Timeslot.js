@@ -16,9 +16,18 @@ Timeslot.init({
 	fach: {
 		type: DataTypes.STRING
 	},
+	uhrzeit: {
+		type: DataTypes.STRING
+	},
 	dauer: {
 		type: DataTypes.STRING
 	},
+	preis: {
+		type: DataTypes.STRING
+	},
+	bezahlungErfolgt: {
+		type: DataTypes.STRING
+	}
 }, {
   sequelize,
   modelName: 'timeslot',
