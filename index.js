@@ -25,6 +25,15 @@ const app = express();
 
 app.use(express.json());
 
+const idNumberControl = (req, res, next) => {
+  if(req.params.id != null ){
+  const id = Number.parseInt(req.params.id);
+  if (Number.isNaN(id)) {
+    throw new InvalidIdException();
+  }}
+  next();
+}
+
 
 app.get('/timeslots', async(req, res) => {
   const timeslots = await Timeslot.findAll();
@@ -134,17 +143,8 @@ function TimeslotNotFoundException(){
 }
 
 
-const idNumberControl = (req, res, next) => {
-  if(req.params.id != null ){
-  const id = Number.parseInt(req.params.id);
-  if (Number.isNaN(id)) {
-    throw new InvalidIdException();
-  }}
-  next();
-}
-
 app.use(thisWillRunInEveryRequest);
 
-app.listen(3000, () => {
+app.listen(6002, () => {
   console.log("app is running");
 });
