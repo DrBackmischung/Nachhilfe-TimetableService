@@ -81,6 +81,14 @@ app.get('/timeslots/:id', idNumberControl, async (req, res, next) => {
   res.send(timeslot);
 })
 
+app.get('/timeslots/schueler/:schuelerId', idNumberControl, async (req, res, next) => {
+  
+})
+
+app.get('/timeslots/lehrer/:schuelerId', idNumberControl, async (req, res, next) => {
+  
+})
+
 app.put('/timeslots/:id', async (req, res) => {
   const requestedId = req.params.id;
   const timeslot = await Timeslot.findOne({where: {id: requestedId}});
