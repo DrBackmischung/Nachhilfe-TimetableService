@@ -68,6 +68,15 @@ app.get('/timeslots/lehrer/:lehrerId', idNumberControl, async (req, res, next) =
   res.send(timeslot);
 })
 
+app.get('/timeslots/skill/:skillId', idNumberControl, async (req, res, next) => {
+  const skillId = req.params.skillId;
+  const timeslot = await Timeslot.findAll({where: {fach: skillId}});
+  if(!timeslot) {
+    next(new TimeslotNotFoundException());
+  }
+  res.send(timeslot);
+})
+
 
 app.get('/timeslots/matching/:lehrerId/:schuelerId', idNumberControl, async (req, res, next) => {
   const lehrerId = req.params.lehrerId;
