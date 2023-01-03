@@ -33,6 +33,9 @@ Timeslot.init({
 	},
 	lehrerId: {
 		type: DataTypes.STRING
+	},
+	distanz: {
+		type: DataTypes.STRING
 	}
 }, {
   sequelize,

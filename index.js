@@ -3,24 +3,92 @@ const sequelize = require('./database');
 const Timeslot = require('./Timeslot');
 
 
-/*sequelize.sync({ force: true }).then(async () => {
-  for(let i = 1; i <= 15; i++){
-    const timeslot = {
-      datum: `01.01.2020`,
-      wochentag: `Montag`,
-      ort: `Raum 04b`,
-      fach: `Mathe`,
-      uhrzeit: `11:45 Uhr`,
-      dauer: `45 min`,
-      preis: `35€`,
-      bezahlungErfolgt: `nein`,
-      schuelerId: `marokkanischer ROnaldo`,
-      lehrerId: `Messi`
-    }
-    await Timeslot.create(timeslot);
+sequelize.sync({ force: true }).then(async () => {
+  let timeslot = {
+    datum: `02.10.2000`,
+    wochentag: `Montag`,
+    ort: `Parkring 21 68159 Mannheim`,
+    fach: `Mathe5`,
+    uhrzeit: `11:45`,
+    dauer: `0.75`,
+    preis: `35`,
+    bezahlungErfolgt: ``,
+    schuelerId: `Test: Marokkanischer Ronaldo`,
+    lehrerId: `Test: Messi`,
+    distanz: ''
   }
+  await Timeslot.create(timeslot);
+  timeslot = {
+    datum: `11.01.2023`,
+    wochentag: `Dienstag`,
+    ort: `Dietmar-Hopp-Allee 16 69190 Mannheim`,
+    fach: `latein5`,
+    uhrzeit: `11:45`,
+    dauer: `0.75`,
+    preis: `35`,
+    bezahlungErfolgt: ``,
+    schuelerId: ``,
+    lehrerId: `000001`,
+    distanz: ''
+  }
+  await Timeslot.create(timeslot);
+  timeslot = {
+    datum: `12.01.2023`,
+    wochentag: `Dienstag`,
+    ort: `Dietmar-Hopp-Allee 16 69190 Mannheim`,
+    fach: `latein5`,
+    uhrzeit: `11:45`,
+    dauer: `0.75`,
+    preis: `35`,
+    bezahlungErfolgt: ``,
+    schuelerId: ``,
+    lehrerId: `000001`,
+    distanz: ''
+  }
+  await Timeslot.create(timeslot);
+  timeslot = {
+    datum: `11.01.2023`,
+    wochentag: `Dienstag`,
+    ort: `Dietmar-Hopp-Allee 16 69190 Mannheim`,
+    fach: `matheI`,
+    uhrzeit: `13:00`,
+    dauer: `1`,
+    preis: `35`,
+    bezahlungErfolgt: ``,
+    schuelerId: ``,
+    lehrerId: `000001`,
+    distanz: ''
+  }
+  await Timeslot.create(timeslot);
+  timeslot = {
+    datum: `11.01.2023`,
+    wochentag: `Dienstag`,
+    ort: `Dietmar-Hopp-Allee 16 69190 Mannheim`,
+    fach: `matheII`,
+    uhrzeit: `14:00`,
+    dauer: `1`,
+    preis: `35`,
+    bezahlungErfolgt: ``,
+    schuelerId: ``,
+    lehrerId: `000001`,
+    distanz: ''
+  }
+  await Timeslot.create(timeslot);
+  timeslot = {
+    datum: `11.01.2023`,
+    wochentag: `Dienstag`,
+    ort: `Dietmar-Hopp-Allee 16 69190 Mannheim`,
+    fach: `matheI`,
+    uhrzeit: `15:00`,
+    dauer: `1`,
+    preis: `35`,
+    bezahlungErfolgt: ``,
+    schuelerId: ``,
+    lehrerId: `000001`,
+    distanz: ''
+  }
+  await Timeslot.create(timeslot);
 });
-*/
 
 const app = express();
 
@@ -110,7 +178,8 @@ app.put('/timeslots/:id', async (req, res) => {
   timeslot.preis = req.body.preis;
   timeslot.bezahlungErfolgt = req.body.bezahlungErfolgt;
   timeslot.schuelerId= req.body.schuelerId;
-  timeslot.lehrerId = req.body.lehrerId
+  timeslot.lehrerId = req.body.lehrerId;
+  timeslot.distanz = req.body.distanz;
   await timeslot.save();
   res.send('updated');
 })
