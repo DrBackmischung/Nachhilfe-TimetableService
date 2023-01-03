@@ -14,7 +14,7 @@ sequelize.sync({ force: true }).then(async () => {
     preis: `35`,
     bezahlungErfolgt: ``,
     schuelerId: `Test: Marokkanischer Ronaldo`,
-    lehrerId: `Test: Messi`,
+    lehrerId: `138fb6e9-1cc5-4195-af9c-fa96b5a53dc9`,
     distanz: ''
   }
   await Timeslot.create(timeslot);
@@ -47,6 +47,20 @@ sequelize.sync({ force: true }).then(async () => {
   }
   await Timeslot.create(timeslot);
   timeslot = {
+    datum: `13.01.2023`,
+    wochentag: `Dienstag`,
+    ort: `Voltastraße 1 68199 Mannheim`,
+    fach: `matheII`,
+    uhrzeit: `14:45`,
+    dauer: `2`,
+    preis: `50`,
+    bezahlungErfolgt: ``,
+    schuelerId: ``,
+    lehrerId: `138fb6e9-1cc5-4195-af9c-fa96b5a53dc9`,
+    distanz: ''
+  }
+  await Timeslot.create(timeslot);
+  timeslot = {
     datum: `11.01.2023`,
     wochentag: `Dienstag`,
     ort: `Dietmar-Hopp-Allee 16 69190 Mannheim`,
@@ -56,7 +70,7 @@ sequelize.sync({ force: true }).then(async () => {
     preis: `35`,
     bezahlungErfolgt: ``,
     schuelerId: ``,
-    lehrerId: `000001`,
+    lehrerId: `138fb6e9-1cc5-4195-af9c-fa96b5a53dc9`,
     distanz: ''
   }
   await Timeslot.create(timeslot);
@@ -70,7 +84,7 @@ sequelize.sync({ force: true }).then(async () => {
     preis: `35`,
     bezahlungErfolgt: ``,
     schuelerId: ``,
-    lehrerId: `000001`,
+    lehrerId: `138fb6e9-1cc5-4195-af9c-fa96b5a53dc9`,
     distanz: ''
   }
   await Timeslot.create(timeslot);
@@ -84,7 +98,7 @@ sequelize.sync({ force: true }).then(async () => {
     preis: `35`,
     bezahlungErfolgt: ``,
     schuelerId: ``,
-    lehrerId: `000001`,
+    lehrerId: `138fb6e9-1cc5-4195-af9c-fa96b5a53dc9`,
     distanz: ''
   }
   await Timeslot.create(timeslot);
