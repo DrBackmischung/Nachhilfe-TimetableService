@@ -3,7 +3,7 @@ const sequelize = require('./database');
 const Timeslot = require('./Timeslot');
 
 
-sequelize.sync({ force: true }).then(async () => {
+/*sequelize.sync({ force: true }).then(async () => {
   for(let i = 1; i <= 15; i++){
     const timeslot = {
       datum: `01.01.2020`,
@@ -20,6 +20,7 @@ sequelize.sync({ force: true }).then(async () => {
     await Timeslot.create(timeslot);
   }
 });
+*/
 
 const app = express();
 
