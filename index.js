@@ -21,7 +21,7 @@ sequelize.sync({ force: true }).then(async () => {
   timeslot = {
     datum: `11.01.2023`,
     wochentag: `Dienstag`,
-    ort: `Dietmar-Hopp-Allee 16 69190 Mannheim`,
+    ort: `Dietmar-Hopp-Allee 16 69190 Walldorf`,
     fach: `latein5`,
     uhrzeit: `11:45`,
     dauer: `0.75`,
@@ -35,7 +35,7 @@ sequelize.sync({ force: true }).then(async () => {
   timeslot = {
     datum: `12.01.2023`,
     wochentag: `Dienstag`,
-    ort: `Dietmar-Hopp-Allee 16 69190 Mannheim`,
+    ort: `Dietmar-Hopp-Allee 16 69190 Walldorf`,
     fach: `latein5`,
     uhrzeit: `11:45`,
     dauer: `0.75`,
@@ -49,7 +49,7 @@ sequelize.sync({ force: true }).then(async () => {
   timeslot = {
     datum: `13.01.2023`,
     wochentag: `Dienstag`,
-    ort: `Voltastraße 1 68199 Mannheim`,
+    ort: `Bahnhof Ober-Roden`,
     fach: `matheII`,
     uhrzeit: `14:45`,
     dauer: `2`,
@@ -63,7 +63,7 @@ sequelize.sync({ force: true }).then(async () => {
   timeslot = {
     datum: `11.01.2023`,
     wochentag: `Dienstag`,
-    ort: `Dietmar-Hopp-Allee 16 69190 Mannheim`,
+    ort: `Dietmar-Hopp-Allee 16 69190 Walldorf`,
     fach: `matheI`,
     uhrzeit: `13:00`,
     dauer: `1`,
@@ -77,7 +77,7 @@ sequelize.sync({ force: true }).then(async () => {
   timeslot = {
     datum: `11.01.2023`,
     wochentag: `Dienstag`,
-    ort: `Dietmar-Hopp-Allee 16 69190 Mannheim`,
+    ort: `Dietmar-Hopp-Allee 16 69190 Walldorf`,
     fach: `matheII`,
     uhrzeit: `14:00`,
     dauer: `1`,
@@ -91,7 +91,7 @@ sequelize.sync({ force: true }).then(async () => {
   timeslot = {
     datum: `11.01.2023`,
     wochentag: `Dienstag`,
-    ort: `Dietmar-Hopp-Allee 16 69190 Mannheim`,
+    ort: `Bahnhof Ober-Roden`,
     fach: `matheI`,
     uhrzeit: `15:00`,
     dauer: `1`,
